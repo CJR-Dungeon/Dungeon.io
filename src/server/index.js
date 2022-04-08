@@ -16,13 +16,13 @@ server.on('connection', (socket) => {
   });
   
   // encounter
-  socket.on('encounter', (payload) => {
-
+  socket.on('ready', (payload) => {
+    socket.emit('SEND-ENCOUNTER', { ...payload, flavorText: 'something' })
   });
   
   // choice
   socket.on('choice', (payload) => {
-
+    socket.emit('resolution', { ...payload, results: 'YOU DEAD' })
   });
   
 });
