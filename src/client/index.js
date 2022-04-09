@@ -12,23 +12,19 @@ socket.emit('join', { clientId: 'testClient' });
 
 program.parse();
 let choice = program.args[0] || 'start';
-console.log("I choose to", choice);
-if(choice === 'start' || !choice ) {
+console.log('I choose to', choice);
+if (choice === 'start' || !choice) {
+  socket.emit('ready', { clientId: 'testClient' });
 
-  socket.emit('ready', { clientId: 'testClient' })
-  
   socket.on('SEND-ENCOUNTER', (payload) => {
-    console.log(payload.flavorText)
+    console.log(payload.flavorText);
     process.exit();
-  })
+  });
 } else {
-  socket.emit('choice', { clientId: 'testClient', choice: choice })
-  
+  socket.emit('choice', { clientId: 'testClient', choice: choice });
+
   socket.on('resolution', (payload) => {
-    console.log(payload.result)
+    console.log(payload.result);
     process.exit();
-  })
+  });
 }
-
-
-
