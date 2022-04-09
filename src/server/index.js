@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000;
 
 const server = new Server(PORT);
 
+const players = {};
+
 //set namespace
 server.on('connection', (socket) => {
   socket.onAny(console.log); // automatically logs and payloads
@@ -13,6 +15,7 @@ server.on('connection', (socket) => {
   // join
   socket.on('join', (payload) => {
     socket.join(payload.clientId);
+    players[payload.clientId] = { playerName: payload.clientId }
   });
   
   // encounter
