@@ -14,8 +14,8 @@ socket.on('SEND-ENCOUNTER', (payload) => {
   console.log(payload.flavorText)
 })
 
-socket.emit('choice', { clientId: 'testClient', choice: 'action client will choose'})
+socket.emit('choice', { clientId: 'testClient', choice: 'counterattack'})
 
 socket.on('resolution', (payload) => {
-  console.log(payload.results)
+  console.log(payload.result)
 })
