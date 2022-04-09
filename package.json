@@ -1,0 +1,23 @@
+{
+  "name": "dungeon.io",
+  "version": "1.0.0",
+  "description": "## How To Use:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CJR-Dungeon/Dungeon.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CJR-Dungeon/Dungeon.io/issues"
+  },
+  "homepage": "https://github.com/CJR-Dungeon/Dungeon.io#readme",
+  "dependencies": {
+    "jest": "^27.5.1"
+  }
+}
